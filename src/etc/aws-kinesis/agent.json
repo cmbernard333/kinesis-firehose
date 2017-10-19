@@ -1,9 +1,0 @@
-{
-    "flows": [
-        {
-            "filePattern": "/var/run/rsyslog/messages",
-            "deliveryStream": "automox-test-kstream-cb",
-            "firehose.endpoint": "firehose.us-west-2.amazonaws.com"
-        }
-    ]
-}
