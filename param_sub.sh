@@ -5,18 +5,18 @@ function param_replace()
     shift
     configs=("$@")
     if [ ! -e $config_file ]; then
-        echo "File $file does not exist!"
+        echo "File $config_file does not exist!"
         return 4
     fi
 	# param substitution
    	echo config_file=$config_file
-    cp $config_file "$(basename $config_file .template)"
+    cp $config_file "${config_file%.*}"
 	for config_v in ${configs[@]}; do
     	key="${config_v%,*}" # front
     	val="${config_v#*,}" # back
     	echo key=$key, val=$val
-    	sed -i "s/\${$key}/$val/" "$(basename $config_file .template)"
+    	sed -i "s/\${$key}/$val/" "${config_file%.*}"
  	done
 }
 
-param_replace "$@"
+# param_replace "$@"
