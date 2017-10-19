@@ -1,12 +1,13 @@
 {
+    "_assumeRoleARN": "firehose_delivery_role",
+    "awsAccessKeyId": "${aws_access_key_id}",
+    "awsSecretAccessKey": "${aws_secret_access_key}",
+    "kinesis.endpoint": "https://kinesis.us-west-2.amazonaws.com",
+    "firehose.endpoint": "https://firehose.us-west-2.amazonaws.com",
     "flows": [
         {
             "filePattern": "/var/run/rsyslog/messages",
-            "deliveryStream": "automox-test-kstream-cb",
-            "firehose.endpoint": "firehose.us-west-2.amazonaws.com",
-            "assumeRoleARN": "firehose_delivery_role",
-            "awsAccessKeyId": "${aws_access_key_id}",
-            "awsSecretAccessKey": "${aws_secret_access_key}"
+            "deliveryStream": "automox-test-kstream-cb"
         }
     ]
 }
