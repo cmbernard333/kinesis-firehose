@@ -6,8 +6,9 @@
   "firehose.endpoint": "https://firehose.us-west-2.amazonaws.com",
   "flows": [
     {
-      "filePattern": "/var/run/rsyslog/messages",
-      "deliveryStream": "automox-test-kstream-cb"
+      "filePattern": "/var/run/rsyslog/messages.*",
+      "deliveryStream": "automox-test-kstream-cb",
+      "maxBufferAgeMillis": "1000"
     }
   ]
 }
