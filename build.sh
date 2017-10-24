@@ -6,7 +6,7 @@ CONFIG_FILE=""
 TAGS=()
 LATEST_TAG=automox/firehose:latest
 RUN=false
-CACHE="--no-cache"
+CACHE=""
 for i in "$@"
 do
 case ${i} in
@@ -29,7 +29,7 @@ case ${i} in
     shift
     ;;
     -n|--no-cache)
-    CACHE=""
+    CACHE="--no-cache"
     shift
     ;;
     *)
