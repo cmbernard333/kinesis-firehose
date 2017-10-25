@@ -7,8 +7,14 @@
   "flows": [
     {
       "filePattern": "/var/run/rsyslog/messages.*",
-      "deliveryStream": "automox-test-kstream-cb",
-      "maxBufferAgeMillis": "1000"
+      "deliveryStream": "${delivery_stream}",
+      "dataProcessingOptions": [
+      {
+          "optionName": "LOGTOJSON",
+          "logFormat": "SYSLOG"
+      }
+      ],
+      "_maxBufferAgeMillis": "1000"
     }
   ]
 }
